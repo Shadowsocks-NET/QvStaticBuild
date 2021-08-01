@@ -66,7 +66,9 @@ cd ..
 export CMAKE_PREFIX_PATH="$(pwd)/static-installed"
 
 git clone https://github.com/moodyhunter/QvMeta.git --recursive --verbose --depth 1
-git submodule update --recursive --remote
+cd QvMeta
+git submodule update --remote
+cd ..
 mkdir QvMeta-build && cd QvMeta-build
 cmake ../QvMeta \
     -DBUILD_TESTING=OFF \
