@@ -7,7 +7,8 @@ pacman -Syu --needed --noconfirm git cmake ninja \
     libfbclient mariadb-libs unixodbc postgresql alsa-lib gst-plugins-base-libs \
     gtk3 libpulse cups freetds vulkan-headers xmlstarlet \
     python at-spi2-core \
-    libxcomposite
+    libxcomposite \
+    abseil-cpp c-ares re2
 
 git clone https://github.com/qt/qtbase --branch v6.2.0-beta2 --verbose --depth 1
 mkdir qt-build && cd qt-build
