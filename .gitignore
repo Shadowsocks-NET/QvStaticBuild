@@ -1,0 +1,5 @@
+qt*
+grpc*
+QvMeta*
+static-installed
+*.tar.zst
