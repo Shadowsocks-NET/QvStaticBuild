@@ -10,48 +10,9 @@ pacman -Syu --needed --noconfirm git cmake ninja \
     libxcomposite \
     abseil-cpp c-ares re2
 
-git clone https://github.com/qt/qtbase --branch v6.2.0-beta2 --verbose --depth 1
-mkdir qt-build && cd qt-build
-cmake ../qtbase \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DBUILD_SHARED_LIBS=OFF \
-    -DQT_FEATURE_sql=OFF \
-    -DQT_FEATURE_dbus=OFF \
-    -DQT_FEATURE_testlib=OFF \
-    -DQT_FEATURE_qmake=OFF \
-    -DCMAKE_INSTALL_PREFIX=../static-installed \
-    -GNinja
-cmake --build . --parallel
-cmake --install .
-cd ..
-
-git clone https://github.com/qt/qtsvg --branch v6.2.0-beta2 --verbose --depth 1
-mkdir qtsvg-build && cd qtsvg-build
-../static-installed/bin/qt-configure-module ../qtsvg/
-cmake --build . --parallel
-cmake --install .
-cd ..
-
-git clone https://github.com/qt/qtdeclarative --branch v6.2.0-beta2 --verbose --depth 1
-mkdir qtdeclarative-build && cd qtdeclarative-build
-../static-installed/bin/qt-configure-module ../qtdeclarative/
-cmake --build . --parallel
-cmake --install .
-cd ..
-
-git clone https://github.com/qt/qtwayland --branch v6.2.0-beta2 --verbose --depth 1
-mkdir qtwayland-build && cd qtwayland-build
-../static-installed/bin/qt-configure-module ../qtwayland/
-cmake --build . --parallel
-cmake --install .
-cd ..
-
-git clone https://github.com/qt/qt5compat --branch v6.2.0-beta2 --verbose --depth 1
-mkdir qt5compat-build && cd qt5compat-build
-../static-installed/bin/qt-configure-module ../qt5compat/
-cmake --build . --parallel
-cmake --install .
-cd ..
+curl -LO https://github.com/Shadowsocks-NET/qt-static-build/releases/download/v6.2.0-beta2/qt-somewhere-static-v6.2.0-beta2-archlinux-x86_64.tar.zst
+mkdir static-installed
+tar -C static-installed -xf qt-somewhere-static-v6.2.0-beta2-archlinux-x86_64.tar.zst
 
 git clone https://github.com/grpc/grpc --recursive --verbose --depth 1
 mkdir grpc-build && cd grpc-build

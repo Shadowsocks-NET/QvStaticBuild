@@ -36,14 +36,16 @@ jobs:
           ZSTD_CLEVEL: 19
           ZSTD_NBTHREADS: 2
         run: |
-          cd QvMeta-build/installed
+          cd static-installed
+          tar -acf ../qv2ray-static-build-deps-nightly-${{ steps.date.outputs.date }}-archlinux-x86_64.tar.zst .
+          cd ../QvMeta-build/installed
           tar -acf ../../qv2ray-static-bin-nightly-${{ steps.date.outputs.date }}-archlinux-x86_64.tar.zst .
       - name: Upload nightly release assets
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: qv2ray-static-bin-nightly-${{ steps.date.outputs.date }}-archlinux-x86_64.tar.zst
+          file: qv2ray-static-*-nightly-${{ steps.date.outputs.date }}-archlinux-x86_64.tar.zst
           tag: nightly-${{ steps.date.outputs.date }}
-          file_glob: false
+          file_glob: true
           overwrite: true
           prerelease: false
