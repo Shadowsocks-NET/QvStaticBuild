@@ -27,10 +27,10 @@ cd ..
 
 export CMAKE_PREFIX_PATH="$(pwd)/static-installed"
 
-git clone https://github.com/moodyhunter/QvMeta.git --verbose --depth 1
+git clone https://github.com/Shadowsocks-NET/QvMeta.git --verbose --depth 1
 cd QvMeta
-git clone --recursive https://github.com/moodyhunter/QvPersonal.git
-git clone --recursive https://github.com/moodyhunter/Plugins.git
+git clone https://github.com/Shadowsocks-NET/Qv2ray.git --recursive --verbose --depth 1
+git clone https://github.com/Shadowsocks-NET/QvPlugins.git --recursive --verbose --depth 1
 cd ..
 mkdir QvMeta-build && cd QvMeta-build
 cmake ../QvMeta \

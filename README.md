@@ -2,7 +2,7 @@
 
 Build statically-linked Qv2ray binaries for Arch Linux!
 
-The nightly workflow runs every 24 hours to build statically-linked binaries from the latest commit.
+The nightly workflow runs every Monday, Wednesday, Friday to build statically-linked binaries from the latest commit.
 
 ## AUR Package
 
