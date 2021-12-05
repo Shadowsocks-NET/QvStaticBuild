@@ -10,9 +10,9 @@ pacman -Syu --needed --noconfirm git cmake ninja \
     libxcomposite \
     abseil-cpp c-ares re2
 
-curl -LO https://github.com/Shadowsocks-NET/qt-static-build/releases/download/v6.2.1/qt-somewhere-static-v6.2.1-archlinux-x86_64.tar.zst
+curl -LO https://github.com/Shadowsocks-NET/qt-static-build/releases/download/v6.2.2/qt-somewhere-static-v6.2.2-archlinux-x86_64.tar.zst
 mkdir static-installed
-tar -C static-installed -xf qt-somewhere-static-v6.2.1-archlinux-x86_64.tar.zst
+tar -C static-installed -xf qt-somewhere-static-v6.2.2-archlinux-x86_64.tar.zst
 
 git clone https://github.com/grpc/grpc.git --branch v1.42.0 --recursive --verbose --depth 1
 mkdir grpc-build && cd grpc-build
