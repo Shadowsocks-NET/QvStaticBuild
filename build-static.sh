@@ -14,7 +14,7 @@ curl -LO https://github.com/Shadowsocks-NET/qt-static-build/releases/download/v6
 mkdir static-installed
 tar -C static-installed -xf qt-somewhere-static-v6.3.0-archlinux-x86_64.tar.zst
 
-git clone https://github.com/grpc/grpc.git --branch v1.45.2 --recursive --verbose --depth 1
+git clone https://github.com/grpc/grpc.git --branch v1.46.3 --recursive --verbose --depth 1
 mkdir grpc-build && cd grpc-build
 cmake ../grpc \
     -DBUILD_SHARED_LIBS=OFF \
